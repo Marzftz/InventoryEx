@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Informes</title>
+  <link  rel="icon" href="../img/logomin.png" type="image/png" >
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../css/estilos.css" rel="stylesheet">
+  <!-- Archivos JavaScript -->
+  <link rel="JavaScript" href="../javascript/default.js">
+  
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="form-group img ">
+        <img src="../img/logo.png" class="imgestilo" for="exampleInputEmail1"></img>
+      </div>
+      <div class="list-group list-group-flush">        
+        <a href="Principal" class="list-group-item list-group-item-action bg-light">Inicio</a>
+        <a href="Usuarios" class="list-group-item list-group-item-action bg-light">Usuarios</a>        
+        <a href="Productos" class="list-group-item list-group-item-action bg-light">Productos</a>
+        <a href="Solicitudes" class="list-group-item list-group-item-action bg-light">Solicitudes</a>
+        <a href="Informes" class="list-group-item list-group-item-action bg-light">Informe</a>
+      </div>
+
+      <div class="text-center py-5 mt-3 close-position">
+        <a href="login" ><button type="button" class="btn btn-danger " ng-click="" >
+           <span  class="icon-video"> Cerrar Sesión </span>
+        </button></a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sombra">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">@Usuario</li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid content">
+        <h1 class="mt-2" id="titulo">Informe</h1>
+        <p class="subtitle">En este apartado podra encontrar toda la informacion estadistica relacionada con la rotacion y almacenamiento del inventario.</p>
+      </div>
+
+      <!--Opciones Solicitudes-->
+      
+        <div class="col-md-11" align="center" >
+         <a href="Informepersonalizado">
+           <img src="../img/Informe personalizado.PNG" width="130" height="130" class="img-responsive" alt="Imagen responsive">
+         </a>
+          <div class="card-body2">
+            <h4 class="card-title">Informe de Inventario</h4>
+            <p class="card-text">Realice la solicitud del informe con fechas especificas.</p>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../src/public/vendor/jquery/jquery.min.js"></script>
+  <script src="../src/public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

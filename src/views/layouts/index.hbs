@@ -1,0 +1,36 @@
+
+  <div class="wrapper">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <div class="form-group img logo">
+        <img src="/img/logo.png" for="exampleInputEmail1"></img>
+      </div>
+      <!-- Login Form -->
+      <form action="/validateuser" method="POST">
+        <div class="contenedor">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo Electrónico</label>
+            <input name="email" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input name="password" type="password" class="form-control" id="InputPassword1">
+          </div>
+          <button  id= "botonInicio" type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+         <div id="alerta" class="form-group contenedor alerta_novisble {{alerta}}">
+              <div id="textalerta" class="alert alert-warning" role="alert">
+                {{textalerta}}
+              </div>
+          </div>
+      </form>
+
+
+
+      <!-- Remind Passowrd -->
+      {{!-- <div id="formFooter">
+        <a class="underlineHover center logo" href="public/modules/default.html">¿Olvidaste tu contraseña?</a>
+      </div> --}}
+
+    </div>
+  </div>

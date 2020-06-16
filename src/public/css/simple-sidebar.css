@@ -1,0 +1,250 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+
+ body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+/* Inicio login */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 50%;
+  height: 350px;
+  max-height: 450px;
+  max-width: 450px;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.contenedor {
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5px;
+}
+
+#botonInicio{
+  color: white;
+}
+  
+.content{
+      padding-left: 40px !important;
+      margin-bottom: 25px;
+}
+
+.logo{
+  margin-top: 20px;
+}
+
+.navcontent{
+  width: 30%;
+}
+
+.imgestilo{
+  margin-top: 4px;
+  margin-bottom: -4px;
+  margin-right: -10px;
+}
+
+.sombra{
+  -webkit-box-shadow: 0px 5px 3px 0px rgba(0,0,0,0.19);
+}
+
+.subtitle{
+  margin-top: -10px !important;
+}
+
+.tables{
+  width: 98%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 25px;
+}
+
+.modal-contenido{
+  width: 85%;
+  margin: auto;
+}
+
+#titulo{
+  color: #8832a4;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  height: 69%;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.alerta_visible{
+    display: block !important;
+}
+
+.alerta_novisble{
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+
+  
+}
+
+/*SOLICITUDES*/
+.body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: consolas;  
+}
+
+.container{
+  width: 850px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containercard .card {
+  position: relative;;
+}
+
+.container .card .face{
+  width: 300px;
+  height:600px;
+  transition: 0.5s;
+}
+.container .card .face .faceface1{
+  position: relative;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(80px);
+}
+.container .card:hover .face .faceface1{
+  background: #8832a4;
+  transform: translateY(0);
+
+}
+.container .card .face .faceface1 .content{
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.container .card:hover .face .faceface1 .content{
+  opacity: 1;
+}
+
+.container .card .face .faceface1 .content img{
+  max-width: 100px;
+}
+.container .card .face .faceface1 .conten h3{
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+.container .card .face .faceface2 {
+  position: relative;
+  background:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 10px rgba(0,0,0,0.8);
+  transform: translateY(-100px);
+}
+.container .card:hover .face .faceface2 {
+  transform: translateY(0);
+}
+
+.container .card .face .faceface2 .content p{
+  margin: 0;
+  padding: -10%;  
+}
+.container .card .face .faceface2 .content a{
+  margin: 10px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
+}
+
+.container .card .face .faceface2 .content a:hover{
+  background: #333;
+  color: #fff;
+
+}
+
+
+
+
