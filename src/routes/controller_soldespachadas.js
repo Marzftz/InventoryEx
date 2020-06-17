@@ -20,28 +20,4 @@ router.get('/Soldespachadas', async(req, res)=>{
     res.render('layouts/Soldespachadas', {soldespa}); 
 });
 
-function imagenes(){
-    var estado= document.getElementById("estadosol").value;
-    var imagenacambiar1=document.getElementById("imgbase1");
-    var imagenacambiar2=document.getElementById("imgbase2");
-    
-    // si es mujer
-    if (estado == "APROBADO")
-    {
-          imagenacambiar1.src="../img/aprobada.png"
-         
-       
-    }
-    // si es hombre
-    else if(estado === "RECHAZADO") {
-
-        
-        imagenacambiar2.src="../img/rechazado.png"
-            
-    }
-  }
-
-
-
-
 module.exports = router;
