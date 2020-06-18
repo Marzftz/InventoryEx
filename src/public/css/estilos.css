@@ -265,5 +265,7 @@ display: none;
 #modaleliminar{
   margin-left: 0.9%;
 
-
+}
+.left{
+  text-align: left;
 }

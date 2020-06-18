@@ -16,7 +16,7 @@ router.get('/solicitudes', async(req, res)=>{
 //----------INICIO CREAR PRODUCTO-------------//
 
 
-router.post('/createproduct', async (req, res)=>{
+router.post('/createsolicitud', async (req, res)=>{
 
     //Se crea variable con los datos enviados desde el front formulario crear usuario
     const  {codproducto, cant } =  req.body;
