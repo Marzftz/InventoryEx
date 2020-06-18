@@ -9,6 +9,13 @@ const productos = '/Productos';
 //----------INICIO CONSULTAR PRODUCTOS-------------//
 
 // se realiza llamado a la URL Productos
+
+router.get('/getProductos', async(req, res)=>{    
+    //Se realiza Query con la consulta de los usuarios de la BD
+    const productos = await db.query(`SELECT InvCodigo_Producto, InvNombre_Producto, InvCantidad, InvPrecio_Unitario from productos;`);
+    res.send(productos);
+});
+
 router.get('/productos', async(req, res)=>{
     
     //Se realiza Query con la consulta de los usuarios de la BD

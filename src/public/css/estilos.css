@@ -253,3 +253,7 @@
 .alerta_novisble{
 display: none;
 }
+
+.left{
+  text-align: left;
+}

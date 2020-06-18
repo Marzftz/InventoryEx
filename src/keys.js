@@ -1,9 +1,8 @@
- module.exports = {
-    database: {
-         host: 'localhost',
-         user: 'root',
-         password: 'Qwerty16.',
-         database: 'inventoryex'
-    }
-
- }
+module.exports = {
+  database: {
+    host: "localhost",
+    user: "user",
+    password: "Qwerty16.",
+    database: "inventoryex",
+  },
+};
