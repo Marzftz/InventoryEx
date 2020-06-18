@@ -64,8 +64,8 @@
                 <button type="button" id="botonescuenta" class="btn btn-outline-secondary" data-toggle="modal"
                   data-target="#agregarusuario">Crear nuevo Usuario</button>
                 <br>
-                <button type="button" id="botonescuenta" class="btn btn-outline-secondary" data-toggle="modal"
-                  data-target="#cambiarcontraseña">Cambiar Contraseña</button>
+                <button href="../layouts/Recuperarcontrasena" type="button" id="botonescuenta"
+                  class="btn btn-outline-secondary">Cambiar Contraseña</button>
               </div>
               <div class="col-sm-8">
                 <img src="../img/cuenta.png" width="210" height="210" class="img-cuenta" alt="Imagen responsive"></img>
@@ -277,9 +277,41 @@
           </form>
           {{!-- Fin modal editar usuario --}}
 
-        </div>
+
+          <!-- INICIO MODAL ALERTA ELIMINAR USUARIO -->
+
+          <form action="deleteUser" method="POST">
+            <div class="modal fade" id="alertaeliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div id= "modaleliminar"class="form-group row">
+                    <label class="col-sm-8 col-form-label"><b>Esta seguro que desea eliminar el usuario con codigo:</b> </label>
+                    <div class="col-sm-3">
+                      <input type="text" readonly class="form-control-plaintext" id="idusuario">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+
+          <!-- FIN MODAL ALERTA ELIMINAR USUARIO -->
+
+ </div>
         <!-- /#page-content-wrapper -->
-      </div>
+</div>
       <!-- /#wrapper -->
 
       <!-- Bootstrap core JavaScript -->

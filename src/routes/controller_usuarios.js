@@ -7,8 +7,8 @@ const db = require("../database");
 const helpers = require("../public/lib/helpers");
 
 //-----VARIABLES GLOBALES -----//
-let alerta , textAlerta = "";
-
+let alerta,
+  textAlerta = "";
 
 const Principal = "/Principal";
 const usuarios = "/Usuarios";
@@ -48,7 +48,7 @@ router.post("/createuser", async (req, res) => {
       if (result.length === 0) {
         //Se crea variable con el llamado al procedimiento almacenado y la data del formulario}
         var passwordencrypted = await helpers.encryptPassword(password);
-        console.log (password, passwordencrypted)
+        console.log(password, passwordencrypted);
         const query = `CALL CreateUser (${rol}, '${nombre}', ${numcc}, '${cargo}', '${correo}', '${passwordencrypted}')`;
         //Se realiza el llamado a la BD
         await db.query(query, (err, result) => {
@@ -127,5 +127,50 @@ router.post("/edituser", async (req, res) => {
 });
 
 //----------FIN EDITAR USUARIO-------------//
+
+//----------INICIO ELIMINAR USUARIO-------------//
+
+router.post("/deleteUser", async (req, res) => {
+  //Se crea variable con los datos enviados desde el frond formulario crear usuario
+  const { idusuario } = req.body;
+
+  //Se crea una variable con la consulta a la BD para validar si hay usuario registrados con el Numero de CC
+  console.log(parseInt(req.body.idusuario));
+
+  const consulta = `SELECT * FROM usuario WHERE idUsuario = ${parseInt(
+    idusuario
+  )};`;
+
+  db.query(consulta, async (err, result) => {
+    //Se valida el resultado de la consulta si es igual a 0
+    if (result.length != 0) {
+      //Se crea variable con el llamado al procedimiento almacenado y la data del formulario
+      const query = `DELETE from usuario where idUsuario= ${parseInt(
+        listRol
+      )}, UsuNombre = '${nombreUser}', UsuIdentificacion = ${parseInt(
+        ccUser
+      )}, UsuCargo = '${cargoUser}', UsuCorreo_Electronico =  '${correoUser}' WHERE idUsuario = ${parseInt(
+        idUser
+      )};`;
+      console.log(query);
+
+      //Se realiza el llamado a la BD
+      await db.query(query, (err, result) => {
+        if (err) {
+          //Si existe un error se imprime en consola
+          console.error(err.message);
+        } else {
+          //Si se realiza la creación exitosa del usuario se redirecciona a la URL users
+          res.redirect(usuarios);
+        }
+      });
+    } else {
+      //Si result es mayor a 0 el usuario ya existe en la BD
+      res.send("El usuario no existe");
+    }
+  });
+});
+
+//----------FIN ELIMINAR USUARIO-------------//
 
 module.exports = router;

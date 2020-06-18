@@ -253,3 +253,17 @@
 .alerta_novisble{
 display: none;
 }
+
+#idusuario{
+   border: 0;
+   margin-top: 15%;
+   color: red;
+   font-weight: bold;
+
+}
+
+#modaleliminar{
+  margin-left: 0.9%;
+
+
+}
