@@ -146,13 +146,8 @@ router.post("/deleteUser", async (req, res) => {
     if (result.length != 0) {
       //Se crea variable con el llamado al procedimiento almacenado y la data del formulario
       const query = `DELETE from usuario where idUsuario= ${parseInt(
-        listRol
-      )}, UsuNombre = '${nombreUser}', UsuIdentificacion = ${parseInt(
-        ccUser
-      )}, UsuCargo = '${cargoUser}', UsuCorreo_Electronico =  '${correoUser}' WHERE idUsuario = ${parseInt(
-        idUser
+        idusuario
       )};`;
-      console.log(query);
 
       //Se realiza el llamado a la BD
       await db.query(query, (err, result) => {

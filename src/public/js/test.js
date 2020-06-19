@@ -24,6 +24,19 @@ let editUser = function (idUsuario) {
 
 // FIN EDITAR USUARIO
 
+
+// ELIMINAR USUARIO
+
+let deleteUser = function (idUsuario) {
+  console.log(idUsuario);
+
+  document.getElementById("idusuario").value = idUsuario;
+
+  $("#alertaeliminar").modal("show");
+};
+
+// FIN ELIMINAR USUARIO
+
 // EDITAR PRODUCTO
 
 let editProduct = function (InvCodigo_Producto) {
@@ -37,20 +50,26 @@ let editProduct = function (InvCodigo_Producto) {
   document.getElementById("nombrep").value = nombrep;
   document.getElementById("cantidadp").value = cantidadp;
   document.getElementById("costop").value = costop;
-
+  
   $("#editarproducto").modal("show");
 };
 
 // FIN EDITAR PRODUCTO
 
-// ELIMINAR USUARIO
 
-let deleteUser = function (idUsuario) {
-  console.log(idUsuario);
+// AGREGAR CANTIDADES PRODUCTO
 
-  document.getElementById("idusuario").value = idUsuario;
+let addcantProduct = function (InvCodigo_Producto) {
+  let nombrep = document.getElementById("nombre" + InvCodigo_Producto)
+    .textContent;
+  let costop = document.getElementById("pre" + InvCodigo_Producto).textContent;
 
-  $("#alertaeliminar").modal("show");
+  document.getElementById("codigopp").value = InvCodigo_Producto;
+  document.getElementById("nombrepp").value = nombrep;
+  document.getElementById("costopp").value = costop;
+
+  $("#agregarcantproducto").modal("show");
 };
 
-// FIN ELIMINAR USUARIO
+
+// FIN AGREGAR CANTIDADES PRODUCTO

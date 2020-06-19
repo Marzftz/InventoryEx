@@ -111,13 +111,45 @@ router.post('/editproduct', async(req, res)=>{
 
 //----------FIN EDITAR PRODUCTO-------------//
 
+//---------- INICIO AGREGAR CANTIDADES PRODUCTO-------------//
 
+router.post('/addcantproduct', async(req, res)=>{
 
+    //Se crea variable con los datos enviados desde el frond formulario crear usuario
+    const  { codigopp, cantidadpp} =  req.body;
+    console.log(codigopp,cantidadpp)
+    
+    const consulta = `SELECT * FROM productos WHERE InvCodigo_Producto = ${parseInt(codigopp)};`
+    
 
+    db.query(consulta, async (err, result) =>{
+        //Se valida el resultado de la consulta si es igual a 0
+        if (result.length != 0) { 
+            const total = parseInt(JSON.stringify(result[0].InvCantidad)) + parseInt(cantidadpp);
+            //Se crea variable con el llamado al procedimiento almacenado y la data del formulario
+            const query = `UPDATE productos SET InvCantidad =${parseInt(total)} WHERE InvCodigo_Producto = ${parseInt(codigopp)};`             
+            //Se realiza el llamado a la BD
+            await db.query(query, (err, result) =>{
+                if (err) {
+                    //Si existe un error se imprime en consola
+                    console.error(err.message);                    
+                } else {
+                    //Si se realiza la creación exitosa del usuario se redirecciona a la URL users
+                    res.redirect(productos);
+                }
+            });           
+        }else{
+            //Si result es mayor a 0 el usuario ya existe en la BD
+            res.send('El producto no existe'); 
+        }
+        
+    })
 
-router.post('edituser', async(req, res)=>{
-    console.log("Conectado")
+    
 });
+
+//----------FIN AGREGAR CANTIDADES PRODUCTO-------------//
+
 
 
 
