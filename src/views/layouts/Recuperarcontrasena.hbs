@@ -1,24 +1,31 @@
-  <div class="wrapper">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-      <div class="form-group img logo">
-        <img src="../img/logo.png" for="exampleInputEmail1"></img>
-      </div>
-      <!-- Login Form -->
-      <form action="index" method="">
-        <div class="contenedor">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Correo Electrónico</label>
-            <input name="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Confirme correo electronico</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <button  id= "botonInicio" type="submit" class="btn btn-primary">Recuperar</button>
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <div class="form-group img logo">
+      <img src="../img/logo.png" for="exampleInputEmail1"></img>
+    </div>
+    <!-- Login Form -->
+    <form action="index" method="">
+      <div class="contenedor">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Correo Electrónico</label>
+          <input name="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
-      </form>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirme correo electronico</label>
+          <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button id="botonInicio" type="submit" class="btn btn-primary">Recuperar</button>
+      </div>
+    </form>
 
-      <!-- Remind Passowrd -->
+    <!-- Remind Passowrd -->
 
+    <script>
+      $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
 
+      window.onload = updateDataFront();
+    </script>

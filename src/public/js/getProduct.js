@@ -5,7 +5,7 @@ async function getProduct() {
   var getProduct = await $.get(Productos);
 
   //Llamo a la función para guardar en el local storage
-  localProductos("productos" ,getProduct);
+  local("productos" ,getProduct);
 
   var element = document.getElementById("productos");
   var selectObject = $('select[id="productos"]');
@@ -24,7 +24,7 @@ async function getProduct() {
 
 
 //------------Guardar de forma local información-------------
-function localProductos(key, p) {
+function local(key, p) {
   miStorage.setItem(key, JSON.stringify(p));
 }
 

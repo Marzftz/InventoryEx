@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>Solicitudes Despachadas</title>
-  <link  rel="icon" href="../img/logomin.png" type="image/png" > 
+  <link rel="icon" href="../img/logomin.png" type="image/png">
 
 
   <!-- Bootstrap core CSS -->
@@ -30,18 +30,18 @@
       <div class="form-group img ">
         <img src="../img/logo.png" class="imgestilo" for="exampleInputEmail1"></img>
       </div>
-     <div class="list-group list-group-flush">        
+      <div class="list-group list-group-flush">
         <a href="Principal" class="list-group-item list-group-item-action bg-light">Inicio</a>
-        <a href="Usuarios" class="list-group-item list-group-item-action bg-light">Usuarios</a>        
+        <a href="Usuarios" class="list-group-item list-group-item-action bg-light">Usuarios</a>
         <a href="Productos" class="list-group-item list-group-item-action bg-light">Productos</a>
         <a href="Solicitudes" class="list-group-item list-group-item-action bg-light">Solicitudes</a>
         <a href="Informes" class="list-group-item list-group-item-action bg-light">Informe</a>
       </div>
 
       <div class="text-center py-5 mt-3 close-position">
-        <a href="login" ><button type="button" class="btn btn-danger " ng-click="" >
-           <span  class="icon-video"> Cerrar Sesión </span>
-        </button></a>
+        <a href="login"><button type="button" class="btn btn-danger " ng-click="">
+            <span class="icon-video"> Cerrar Sesión </span>
+          </button></a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -49,81 +49,96 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sombra">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sombra">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-              <li class="nav-item dropdown">@Usuario</li>
-            </ul>
-          </div>
-        </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
-       <!--Barra de navegacion interna-->
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="solicitudes.html">Solicitudes</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Solicitudes Despachadas</li>
-            </ol>
-          </nav>
-       <!--Titulo de la Pagina-->
-        <div class="container-fluid content">
-          <h1 class="mt-2" id="titulo">Solicitudes Despachadas</h1>
-          <p class="subtitle">Visualice las solicitudes que ya tuvieron respuesta y las observaciones de las mismas.</p>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
         </div>
+      </nav>
 
-        <div class="navcontent">
-          <div class="input-group mb-3 content">
+      <!--Barra de navegacion interna-->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="solicitudes.html">Solicitudes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Solicitudes Despachadas</li>
+        </ol>
+      </nav>
+      <!--Titulo de la Pagina-->
+      <div class="container-fluid content">
+        <h1 class="mt-2" id="titulo">Solicitudes Despachadas</h1>
+        <p class="subtitle">Visualice las solicitudes que ya tuvieron respuesta y las observaciones de las mismas.</p>
+      </div>
 
-            <input type="text" class="form-control" placeholder="Ingrese criterio de busqueda" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">Buscar</button>
-            </div>
+      <div class="navcontent">
+        <div class="input-group mb-3 content">
+
+          <input type="text" class="form-control" placeholder="Ingrese criterio de busqueda"
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Buscar</button>
           </div>
         </div>
-        <!--FIN TITULO PAGINA-->
+      </div>
+      <!--FIN TITULO PAGINA-->
 
-        <!--INICIO TABLA SOLICITUDES PENDIENTES-->
+      <!--INICIO TABLA SOLICITUDES PENDIENTES-->
 
-        <div class="tables content">
-          <table class="table table-sm">
-            <thead> 
-              <tr>
-                <th scope="col">Id Solicitudes</th>
-                <th scope="col">Código Producto</th>
-                <th scope="col">Nombre Producto</th>
-                <th scope="col">Cantidades</th>
-                <th scope="col">Solicitado por</th>
-                <th scope="col">Fecha de Solicitud</th>
-                <th scope="col">Fecha de Despacho</th>
-                <th scope="col">Estado Solicitud</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
+      <div class="tables content">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id Solicitudes</th>
+              <th scope="col">Código Producto</th>
+              <th scope="col">Nombre Producto</th>
+              <th scope="col">Cantidades</th>
+              <th scope="col">Solicitado por</th>
+              <th scope="col">Fecha de Solicitud</th>
+              <th scope="col">Fecha de Despacho</th>
+              <th scope="col">Estado Solicitud</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               {{#each soldespa}}
-                <th scope="row">{{idSolicitud_de_Producto}}</th>
-                <td>{{InvCodigo_Producto}}</td>
-                <td>{{InvNombre_Producto}}</td>
-                <td>{{SolCantidad_Producto}}</td>
-                <td>{{UsuNombre}}</td>
-                <td>{{SolFecha_Solicitud}}</td>
-                <td>{{SolFecha_Cierre_Solicitud}}</td>
-                <td>{{SolEstado_Solicitud}}</td>
-             </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        </div>
+              <th scope="row">{{idSolicitud_de_Producto}}</th>
+              <td>{{InvCodigo_Producto}}</td>
+              <td>{{InvNombre_Producto}}</td>
+              <td>{{SolCantidad_Producto}}</td>
+              <td>{{UsuNombre}}</td>
+              <td>{{SolFecha_Solicitud}}</td>
+              <td>{{SolFecha_Cierre_Solicitud}}</td>
+              <td>{{SolEstado_Solicitud}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
       <!--Fin Tabla de productos -->
 
       <!-- Modal -->
-      
-      
-      <div class="modal fade" id="Gestionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+      <div class="modal fade" id="Gestionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -158,23 +173,23 @@
                 </div>
               </div>
               <div class="form-group row">
-               <label for="inputPassword" class="col-sm-5 col-form-label">Costo Unitario</label>
-               <div class="col-sm-7">
-                 <input type="text" class="form-control" id="inputUnitario" placeholder="Costo unitario del producto">
-               </div>
-             </div>
-             <div class="form-group row">
-               <label for="inputPassword" class="col-sm-5 col-form-label">Costo Total</label>
-               <div class="col-sm-7">
-                 <input type="text" class="form-control" id="inputUnitario" placeholder="Costo unitario del producto">
-               </div>
-             </div>
-             <div class="form-group row">
-               <label for="inputPassword" class="col-sm-5 col-form-label">Motivo de Retiro</label>
-               <div class="col-sm-7">
-                 <input type="text" class="form-control" id="inputUnitario" placeholder="Costo unitario del producto">
-               </div>
-             </div>
+                <label for="inputPassword" class="col-sm-5 col-form-label">Costo Unitario</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputUnitario" placeholder="Costo unitario del producto">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-5 col-form-label">Costo Total</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputUnitario" placeholder="Costo unitario del producto">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-5 col-form-label">Motivo de Retiro</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputUnitario" placeholder="Costo unitario del producto">
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -195,19 +210,23 @@
 
   <!-- Menu Toggle Script -->
   <script>
-    $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip();   
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
     });
-    </script>
+  </script>
   <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
 
 </body>
+<script>
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
 
-</html>
-
-
+  window.onload = updateDataFront();
+</script>
