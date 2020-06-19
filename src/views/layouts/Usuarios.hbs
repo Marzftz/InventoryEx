@@ -50,14 +50,15 @@
     </nav>
 
     <!-- Titulo y descripción de la pantalla -->
+    <div class="container-fluid content">
+      <h1 class="mt-2" id="titulo">Usuarios</h1>
+      <p class="subtitle">En el siguiente apartado podra consultar sus datos y realizar el cambio de su contraseña</p>
+    </div>
 
     <div class="container-fluid content">
+      <!--Titulo y descripción de la pantalla -->
       <div class="row" style="height: 100%">
         <div class="col-md-12">
-          <h1 class="mt-2" id="titulobienvenido">Cuenta @Usuario</h1>
-          <br>
-          <p class="subtitle">En el siguiente apartado podra consultar sus datos y realizar el cambio de su contraseña
-          </p>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm ">
@@ -137,7 +138,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button id="botonInicio" type="submit" class="btn btn-primary">Crear</button>
+                    <button id="botonCrear" type="submit" class="btn btn-primary">Crear</button>
                   </div>
                 </div>
               </div>
@@ -291,8 +292,9 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div id= "modaleliminar"class="form-group row">
-                    <label class="col-sm-8 col-form-label"><b>Esta seguro que desea eliminar el usuario con codigo:</b> </label>
+                  <div id="modaleliminar" class="form-group row">
+                    <label class="col-sm-8 col-form-label"><b>Esta seguro que desea eliminar el usuario con codigo:</b>
+                    </label>
                     <div class="col-sm-3">
                       <input type="text" readonly class="form-control-plaintext" id="idusuario">
                     </div>
@@ -309,19 +311,16 @@
 
           <!-- FIN MODAL ALERTA ELIMINAR USUARIO -->
 
- </div>
+        </div>
         <!-- /#page-content-wrapper -->
-</div>
+      </div>
       <!-- /#wrapper -->
-
-      <!-- Bootstrap core JavaScript -->
-      <script src="../vendor/jquery/jquery.min.js"></script>
-      <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
       <!-- Menu Toggle Script -->
       <script>
         $("#menu-toggle").click(function (e) {
           e.preventDefault();
           $("#wrapper").toggleClass("toggled");
         });
+
+        window.onload = updateDataFront();
       </script>
