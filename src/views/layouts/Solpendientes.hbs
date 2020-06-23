@@ -104,26 +104,34 @@
         <table class="table table-sm">
           <thead>
             <tr>
-              <th scope="col">Id Solicitud</th>
-              <th scope="col">Id Producto</th>
-              <th scope="col">Nombre Producto</th>
-              <th scope="col">Cantidades</th>
-              <th scope="col">Fecha Solicitud</th>
-              <th scope="col">Solicitado Por</th>
-              <th scope="col">Acción</th>
+              <th scope="col" style="text-align: center;">Id Solicitud</th>
+              <th scope="col" style="text-align: center;">Id Producto</th>
+              <th scope="col" style="text-align: center;">Nombre Producto</th>
+              <th scope="col" style="text-align: center;">Cantidades</th>
+              <th scope="col" style="text-align: center;">Costo Unitario</th>
+              <th scope="col" style="text-align: center;">Fecha Solicitud</th>
+              <th scope="col" style="text-align: center;">Solicitado Por</th>
+              <th scope="col" style="text-align: center;">Acción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               {{#each solicitudes}}
-              <th scope="row">{{idSolicitud_de_Producto}}</th>
-              <td>{{InvCodigo_Producto}}</td>
-              <td>{{InvNombre_Producto}}</tdñ>
-              <td>{{SolCantidad_Producto}}</td>
-              <td>{{SolFecha_Solicitud}}</td>
-              <td>{{UsuNombre}}</td>
-              <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal"
-                  data-target="#Gestionar">Gestionar</b></button></td>
+              <th scope="row" style="text-align: center;">{{idSolicitud_de_Producto}}</th>
+              <td id="codpro{{idSolicitud_de_Producto}}" style="text-align: center;">{{InvCodigo_Producto}}</td>
+              <td id="nompro{{idSolicitud_de_Producto}}" style="text-align: center;">{{InvNombre_Producto}}</tdñ>
+              <td id="cantpro{{idSolicitud_de_Producto}}" style="text-align: center;">{{SolCantidad_Producto}}</td>
+              <td id="preun{{idSolicitud_de_Producto}}" style="text-align: center;">{{InvPrecio_Unitario}}</td>
+              <td id="solfech" style="text-align: center;">{{SolFecha_Solicitud}}</td>
+              <td style="text-align: center;">{{UsuNombre}}</td>
+              <td>
+                <a style="cursor:pointer" data-toggle="modal" onclick="resolicitud({{idSolicitud_de_Producto}})"><svg
+                    class="bi bi-exclamation-circle-fill" id="iconoretirar" data-toggle="tooltip" title="Gestionar"
+                    width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                  </svg> </a>
+              </td>
             </tr>
             {{/each}}
           </tbody>
@@ -131,121 +139,111 @@
       </div>
       <!--Fin Tabla de productos -->
 
-      <!-- Modal -->
+      <!-- Modal Gestionar-->
+        <div class="modal fade" id="Gestionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Gestionar</h5>
+                <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 
-      <div class="modal fade" id="Gestionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Gestionar</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <!-- Inicio contenido del modal -->
-            <div class="container">
-              <div class="row">
-                <section class="col-12">
-                  <form role="form">
-                    <div class="tab-content py-2">
-                      <div class="tab-pane active" role="tabpanel" id="step1">
-                        <div class="modal-body ">
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Id Solicitud</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputCodigo"
-                                placeholder="Ingrese código producto">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Codigo Producto</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputNombre"
-                                placeholder="Ingrese nombre producto">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Nombre del Producto</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputCantidad"
-                                placeholder="Cantidad del producto">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Cantidades a retirar</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputUnitario"
-                                placeholder="Costo unitario del producto">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Costo Unitario</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputUnitario"
-                                placeholder="Costo unitario del producto">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Costo Total</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputUnitario"
-                                placeholder="Costo unitario del producto">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-5 col-form-label">Motivo de Retiro</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputUnitario"
-                                placeholder="Costo unitario del producto">
-                            </div>
-                          </div>
-
-                          <ul class="float-right">
-                            <li class="list-inline-item">
-                              <button type="button" class="btn btn-secondary" data-pos="L">
-                                <span><svg class="bi bi-arrow-counterclockwise" width="1em" height="1em"
-                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                      d="M12.83 6.706a5 5 0 0 0-7.103-3.16.5.5 0 1 1-.454-.892A6 6 0 1 1 2.545 5.5a.5.5 0 1 1 .91.417 5 5 0 1 0 9.375.789z" />
-                                    <path fill-rule="evenodd"
-                                      d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z" />
-                                  </svg></span> Cancelar
-                              </button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button type="button" class="btn btn-danger" data-pos="L">
-                                <span><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                      d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
-                                    <path fill-rule="evenodd"
-                                      d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
-                                  </svg></span> Rechazar
-                              </button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button type="button" class="btn btn-success" data-pos="L">
-                                <span><svg class="bi bi-check2" width="1em" height="1em" viewBox="0 0 16 16"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                                  </svg></span> Aprobar
-                              </button>
-                            </li>
-                          </ul>
+        <div class="container">
+          <div class="row">
+            <section class="col-12">
+              <form role="form">
+                <div class="tab-content py-2">
+                  <div class="tab-pane active" role="tabpanel" id="step1">
+                    <div class="modal-body ">
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">Id Solicitud</label>
+                        <div class="col-sm-7">
+                          <input name="inputCodigo" type="text" class="form-control" id="inputCodigo" readonly
+                            placeholder="Ingrese código producto">
                         </div>
                       </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">Codigo Producto</label>
+                        <div class="col-sm-7">
+                          <input name="inputNombre" type="text" class="form-control" id="inputcod" readonly
+                            placeholder="Ingrese nombre producto">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">Nombre del Producto</label> 
+                        <div class="col-sm-7">
+                          <input name="inputCantidad" type="text" class="form-control" id="inputNombre" readonly
+                            placeholder="Cantidad del producto">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">Cantidades a retirar</label>
+                        <div class="col-sm-7">
+                          <input name="inputcanti" type="text" class="form-control" id="inputCantidad" readonly
+                            placeholder="Costo unitario del producto">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">Costo Unitario</label>
+                        <div class="col-sm-7">
+                          <input name="inputUnitario" type="text" class="form-control" id="inputUnitario" readonly
+                            placeholder="Costo unitario del producto">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">Costo Total</label>
+                        <div class="col-sm-7">
+                          <input name="inputotal" type="text" class="form-control" id="inputotal" readonly
+                            placeholder="Costo unitario del producto">
+                        </div>
+                      </div>
+
+                      <ul class="float-right">
+                        <li class="list-inline-item">
+                          <button type="button" class="btn btn-secondary" data-pos="L">
+                            <span><svg class="bi bi-arrow-counterclockwise" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M12.83 6.706a5 5 0 0 0-7.103-3.16.5.5 0 1 1-.454-.892A6 6 0 1 1 2.545 5.5a.5.5 0 1 1 .91.417 5 5 0 1 0 9.375.789z" />
+                                <path fill-rule="evenodd"
+                                  d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z" />
+                              </svg></span> Cancelar
+                          </button>
+                        </li>
+                        <li class="list-inline-item">
+                          <button type="button" class="btn btn-danger" data-pos="L">
+                            <span><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
+                                <path fill-rule="evenodd"
+                                  d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
+                              </svg></span> Rechazar
+                          </button>
+                        </li>
+                        <li class="list-inline-item">
+                          <button type="button" class="btn btn-success" data-pos="L">
+                            <span><svg class="bi bi-check2" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                              </svg></span> Aprobar
+                          </button>
+                        </li>
+                      </ul>
                     </div>
-              </div>
-              </form>
-              </section>
-            </div>
+                  </div>
+                </div>
           </div>
-        </div>
-      </div>
+      </section>
     </div>
+  </div>
+  </div>
+  </div>
+  </div>
 
   </div>
   <!-- /#page-content-wrapper -->

@@ -73,3 +73,24 @@ let addcantProduct = function (InvCodigo_Producto) {
 
 
 // FIN AGREGAR CANTIDADES PRODUCTO
+
+//----------INCIO RESPUESTA SOLICITUD-------------//
+
+let resolicitud = function (idSolicitud_de_Producto) {
+  let codprod = document.getElementById("codpro" + idSolicitud_de_Producto).textContent;
+  let nomprod = document.getElementById("nompro" + idSolicitud_de_Producto).textContent;
+  let cantprod = document.getElementById("cantpro" + idSolicitud_de_Producto).textContent;
+  let preund = document.getElementById("preun" + idSolicitud_de_Producto).textContent;
+
+  document.getElementById("inputCodigo").value = idSolicitud_de_Producto;
+  document.getElementById("inputcod").value = codprod;
+  document.getElementById("inputNombre").value = nomprod;
+  document.getElementById("inputCantidad").value = cantprod;
+  document.getElementById("inputUnitario").value = preund;
+  document.getElementById("inputotal").value = parseInt(cantprod * preund)
+  
+  $("#Gestionar").modal("show");
+};
+
+//----------FIN RESPUESTA SOLICITUD-------------//
+

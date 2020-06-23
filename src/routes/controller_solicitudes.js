@@ -37,9 +37,15 @@ router.post("/createsolicitud", async (req, res) => {
         res.redirect(solicitudes);
       }
     });
+  } else {
+    res.redirect(solicitudes)
   }
 });
 
-//----------FIN CREAR USUARIO-------------//
+//----------FIN CREAR SOLICITUD-------------//
+
+
+
+
 
 module.exports = router;
