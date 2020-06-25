@@ -29,3 +29,14 @@ function updateDataFront() {
     document.getElementById("navbarDropdown").innerHTML = name;
   }
 }
+
+function getEmail() {
+  var local = localStorage.getItem("userData");
+  local = JSON.parse(local);
+
+  let email = local[0].UsuCorreo_Electronico;
+
+  document.getElementById("staticEmail").value = email;
+  
+  
+}
