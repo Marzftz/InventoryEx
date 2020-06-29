@@ -52,17 +52,17 @@ router.post("/validateuser", async (req, res) => {
       }
     } else {
       //Si no son correctas se envia alerta
-      textAlerta = "El correo electrónico no se encuentra registrado";
+      textAlerta = "El correo no se encuentra registrado";
       alerta = "alerta_visible";
       //Redireccionamos a la url y enviamos mensaje de alerta y nombre de la clase css
-      res.render("/layouts/index", { textAlerta, alerta });
+      res.render("./layouts/index", { textAlerta, alerta });
     }
   } else {
     //Si las variables son vacias se direcciona a la pantalla de login
     var textalerta = "Los datos son obligatorios";
     var alerta = "alerta_visible";
     //Redireccionamos a la url y enviamos mensaje de alerta y nombre de la clase css
-    res.render("layouts/index", { textalerta, alerta });
+    res.render("./layouts/index", { textalerta, alerta });
   }
 });
 

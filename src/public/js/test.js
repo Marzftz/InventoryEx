@@ -88,9 +88,34 @@ let resolicitud = function (idSolicitud_de_Producto) {
   document.getElementById("inputCantidad").value = cantprod;
   document.getElementById("inputUnitario").value = preund;
   document.getElementById("inputotal").value = parseInt(cantprod * preund)
+  document.getElementById('buttonRechazar').setAttribute('onclick',`rechazar(${idSolicitud_de_Producto})`);
+  document.getElementById('buttonAprobar').setAttribute('onclick',`aprobar(${idSolicitud_de_Producto})`);
   
   $("#Gestionar").modal("show");
 };
 
 //----------FIN RESPUESTA SOLICITUD-------------//
 
+
+//---------INICIO GESTIONAR SOLICITUD ----------//
+function aprobar(id) {
+  $("#Gestionar").modal("toggle");
+  document.getElementById("titleConfirmar").innerHTML = "Aprobar solicitud";
+  document.getElementById("textConfirmar").innerHTML = "¿Esta seguro que desea aprobar la solicitud?";
+  document.getElementById("idSolicitud").value = id;
+  document.getElementById("buttonConfirmar").className = "btn btn-success";
+  document.confirmar.action ="/aprobarSolicitud";
+  $("#confirmar").modal("show");
+   
+}
+
+function rechazar(id) {
+  $("#Gestionar").modal("toggle");
+  document.getElementById("titleConfirmar").innerHTML = "Rechazar solicitud";
+  document.getElementById("textConfirmar").innerHTML = "¿Esta seguro que desea rechazar la solicitud?";
+  document.getElementById("idSolicitud").value = id;
+  document.getElementById("buttonConfirmar").className = "btn btn-danger";
+  document.confirmar.action ="/rechazarSolicitud";
+  $("#confirmar").modal("show");
+   
+}
