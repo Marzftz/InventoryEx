@@ -270,3 +270,16 @@ display: none;
 .left{
   text-align: left;
 }
+
+#formcambiarcontra{
+
+  background-color: #fff;
+  border-style: solid;
+  border-color: #8832a4;
+  padding: 3% ;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 20px;
+
+
+}

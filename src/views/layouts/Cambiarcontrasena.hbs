@@ -49,19 +49,43 @@
     <!-- Titulo y descripción de la pantalla -->
     <div class="container-fluid content">
       <input class="alerta_novisble" id="idUser" value="{{idUsuario}}">
-      <h1 class="mt-2" id="titulobienvenido">¡Bienvenido {{nameUser}}!</h1>
+      <h1 class="mt-2" id="titulobienvenido">Cambiar Contraseña</h1>
       <br>
-      <p class="subtitle">Recuerde por favor que el funcionamiento de esta aplicacion es resposabilidad de cada uno de
-        los usuarios, recomendamos hacer un buen uso del aplicativo y si tiene alguna inquietud por favor comuniquese
-        con administrador@inventoryex.com.</p>
-      <div>
-        <img src="../img/estadistica.PNG" id="imgestadistica"></img>
-      </div>
+      <p class="subtitle"> En el presente apartado podra realizar el cambio de su contraseña.</p>
     </div>
     <!--FIN Titulo y descripción de la pantalla -->
 
+    <form id="formcambiarcontra">
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-6 col-form-label">Email</label>
+        <div class="col-sm-6">
+          <input name="staticEmail" type="text" readonly class="form-control-plaintext" id="staticEmail" value="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-6 col-form-label">Contraseña Actual</label>
+        <div class="col-sm-6">
+          <input name="antPassword" type="password" class="form-control" id="antPassword">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="position:relative
+        " for="inputPassword" class="col-sm-6 col-form-label">Nueva Contraseña</label>
+        <div class="col-sm-6">
+          <input name= "newPassword" type="password" class="form-control" id="newPassword">
+        </div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary">Cancelar</button>
+        <button type="button" class="btn btn-secondary botondescarga">Guardar</button>
+      </div>
+    </form>
+
   </div>
   <!-- /#page-content-wrapper -->
+
+
 
 </div>
 <!-- /#wrapper -->
@@ -71,6 +95,6 @@
     $("#wrapper").toggleClass("toggled");
   });
 
-  window.onload = dataUser();
+  window.onload = getEmail();
   window.onload = updateDataFront();
 </script>

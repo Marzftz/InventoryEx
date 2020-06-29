@@ -18,4 +18,9 @@ router.get("/", (req, res) => {
   res.render("layouts/index");
 });
 
+router.get("/Cambiarcontrasena", (req, res) => {
+  res.render("layouts/Cambiarcontrasena");
+});
+
+
 module.exports = router;
