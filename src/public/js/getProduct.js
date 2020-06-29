@@ -70,3 +70,8 @@ function idUsuario() {
   local = JSON.parse(local);
   return local[0].idUsuario;
 }
+
+function closeSession() {
+  miStorage.clear();
+  location.href="http://localhost:3500";  
+}
