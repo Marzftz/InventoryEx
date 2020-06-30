@@ -12,23 +12,23 @@ async function dataUser() {
 
     //Almacenamos datos en el localstorage
     local("userData", getDataUser);
-  }else{
-    location.href="http://localhost:3500";
   }
 }
 
 
 function updateDataFront() {
   var local = localStorage.getItem("userData");
-  local = JSON.parse(local);
+  if (local != null) {
+    local = JSON.parse(local);
 
-  let name = local[0].UsuNombre;
-
-  if (window.location.href != "http://localhost:3500/Principal") {
-    document.getElementById("navbarDropdown").innerHTML = name;
-  }else{
-    document.getElementById("titulobienvenido").innerHTML = `¡Bienvenido ${name}!`;
-    document.getElementById("navbarDropdown").innerHTML = name;
+    let name = local[0].UsuNombre;
+  
+    if (window.location.href != "http://localhost:3500/Principal") {
+      document.getElementById("navbarDropdown").innerHTML = name;
+    }else{
+      document.getElementById("titulobienvenido").innerHTML = `¡Bienvenido ${name}!`;
+      document.getElementById("navbarDropdown").innerHTML = name;
+    }  
   }
 }
 
