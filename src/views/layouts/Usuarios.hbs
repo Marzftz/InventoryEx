@@ -1,4 +1,7 @@
-<div class="d-flex" id="wrapper">
+  <script>
+      validate();
+  </script> 
+  <div class="d-flex" id="wrapper">
   <!-- Sidebar -->
   <div class="bg-light border-right" id="sidebar-wrapper">
     <div class="form-group img ">
@@ -13,7 +16,7 @@
     </div>
 
     <div class="text-center py-5 mt-3 close-position">
-      <a href="login"><button type="button" class="btn btn-danger " ng-click="">
+      <a><button type="button" class="btn btn-danger " onclick="closeSession()">
           <span class="icon-video"> Cerrar Sesión </span>
         </button></a>
     </div>
@@ -62,7 +65,7 @@
               <div class="col-sm ">
                 <button type="button" id="botonescuenta" class="btn btn-outline-secondary" data-toggle="modal"
                   data-target="#agregarusuario">Crear nuevo Usuario</button>
-                </div>
+              </div>
               <div class="col-sm-8">
                 <img src="../img/cuenta.png" width="210" height="210" class="img-cuenta" alt="Imagen responsive"></img>
               </div>
@@ -316,6 +319,5 @@
           e.preventDefault();
           $("#wrapper").toggleClass("toggled");
         });
-
         window.onload = updateDataFront();
       </script>
