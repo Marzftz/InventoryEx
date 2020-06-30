@@ -75,3 +75,10 @@ function closeSession() {
   miStorage.clear();
   location.href="http://localhost:3500";  
 }
+
+function validate() {
+  var local = localStorage.getItem("userData");
+  if (local == null) {
+      location.href="http://localhost:3500";  
+  }
+}
