@@ -12,6 +12,8 @@ async function dataUser() {
 
     //Almacenamos datos en el localstorage
     local("userData", getDataUser);
+  }else{
+    location.href="http://localhost:3500";
   }
 }
 
