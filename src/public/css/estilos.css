@@ -280,6 +280,9 @@ display: none;
   margin-left: 25%;
   margin-right: 25%;
   border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(184,134,184,1);
+-moz-box-shadow: 10px 10px 5px -6px rgba(184,134,184,1);
+box-shadow: 10px 10px 5px -6px rgba(184,134,184,1);
 
 
 }
