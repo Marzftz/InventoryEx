@@ -143,21 +143,21 @@
       <table class="table table-sm">
         <thead>
           <tr>
-            <th scope="col">Código producto</th>
-            <th scope="col">Nombre producto</th>
-            <th scope="col">Total almacenado</th>
-            <th scope="col">Costo unitario</th>
-            <th scope="col">Acción</th>
+            <th scope="col" style="text-align: center;">Código producto</th>
+            <th scope="col" style="text-align: center;">Nombre producto</th>
+            <th scope="col" style="text-align: center;">Total almacenado</th>
+            <th scope="col" style="text-align: center;">Costo unitario</th>
+            <th scope="col" style="text-align: center;">Acción</th>
           </tr>
         </thead>
         <tbody>
           {{#each productos}}
           <tr>
-            <th scope="row">{{InvCodigo_Producto}}</th>
-            <td id="nombre{{InvCodigo_Producto}}">{{InvNombre_Producto}}</td>
-            <td id="cant{{InvCodigo_Producto}}">{{InvCantidad}}</td>
-            <td id="pre{{InvCodigo_Producto}}">{{InvPrecio_Unitario}}</td>
-            <td><a style="cursor:pointer" data-toggle="modal" onclick="addcantProduct({{InvCodigo_Producto}})"><svg
+            <th scope="row" style="text-align: center;">{{InvCodigo_Producto}} </th>
+            <td id="nombre{{InvCodigo_Producto}}" style="text-align: center;">{{InvNombre_Producto}}</td>
+            <td id="cant{{InvCodigo_Producto}}" style="text-align: center;">{{InvCantidad}}</td>
+            <td id="pre{{InvCodigo_Producto}}" style="text-align: center;">{{InvPrecio_Unitario}}</td>
+            <td style="text-align: center;"><a style="cursor:pointer" data-toggle="modal" onclick="addcantProduct({{InvCodigo_Producto}})"><svg
                   class="bi bi-plus-circle-fill" id="iconoagregar" data-toggle="tooltip" title="agregar"
                   viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -200,7 +200,7 @@
                 <label for="inputPassword" class="col-sm-5 col-form-label">Código producto</label>
                 <div class="col-sm-7">
                   <input name="codigop" type="text" class="form-control" id="codigop"
-                    placeholder="Ingrese código producto">
+                    placeholder="Ingrese código producto" readonly>
                 </div>
               </div>
               <div class="form-group row">

@@ -2,11 +2,14 @@ const bcrypt = require('bcrypt');
 
 const helpers = {};
 
+// ENCRIPTAR CONTRASEÑAR
 helpers.encryptPassword = async(password) =>{
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
     return hash;
 };
+
+// COMPARAR CONTRASEÑAS
 
 helpers.matchPassword = async(password, savedPassword) =>{
     try {
@@ -15,6 +18,16 @@ helpers.matchPassword = async(password, savedPassword) =>{
         console.log(e);        
     }
 };
+
+
+
+
+
+
+
+
+
+
 
 
 helpers.localStorage = () => {

@@ -80,27 +80,27 @@
         <table class="table table-sm">
           <thead>
             <tr>
-              <th scope="col">Id Solicitudes</th>
-              <th scope="col">Código Producto</th>
-              <th scope="col">Nombre Producto</th>
-              <th scope="col">Cantidades</th>
-              <th scope="col">Solicitado por</th>
-              <th scope="col">Fecha de Solicitud</th>
-              <th scope="col">Fecha de Despacho</th>
-              <th scope="col">Estado Solicitud</th>
+              <th scope="col" style="text-align: center">Id</th>
+              <th scope="col" style="text-align: center">Código</th>
+              <th scope="col" style="text-align: center">Producto</th>
+              <th scope="col" style="text-align: center">Cant</th>
+              <th scope="col" style="text-align: center">Solicitado por</th>
+              <th scope="col" style="text-align: center">Fecha solicitud</th>
+              <th scope="col" style="text-align: center">Fecha despacho</th>
+              <th scope="col" style="text-align: center">Estado</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               {{#each soldespa}}
-              <th scope="row">{{idSolicitud_de_Producto}}</th>
-              <td>{{InvCodigo_Producto}}</td>
-              <td>{{InvNombre_Producto}}</td>
-              <td>{{SolCantidad_Producto}}</td>
-              <td>{{UsuNombre}}</td>
-              <td>{{SolFecha_Solicitud}}</td>
-              <td>{{SolFecha_Cierre_Solicitud}}</td>
-              <td>{{SolEstado_Solicitud}}</td>
+              <th scope="row" style="text-align: center">{{idSolicitud_de_Producto}}</th>
+              <td style="text-align: center">{{InvCodigo_Producto}}</td>
+              <td style="text-align: center">{{InvNombre_Producto}}</td>
+              <td style="text-align: center">{{SolCantidad_Producto}}</td>
+              <td style="text-align: center">{{UsuNombre}}</td>
+              <td style="text-align: center">{{SolFecha_Solicitud}}</td>
+              <td id="solfech" style="text-align: center;">{{SolFecha_Cierre_Solicitud}}</td>
+              <td style="text-align: center">{{SolEstado_Solicitud}}</td>
             </tr>
             {{/each}}
           </tbody>

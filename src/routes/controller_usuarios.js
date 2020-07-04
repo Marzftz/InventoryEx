@@ -48,7 +48,6 @@ router.post("/createuser", async (req, res) => {
       if (result.length === 0) {
         //Se crea variable con el llamado al procedimiento almacenado y la data del formulario}
         var passwordencrypted = await helpers.encryptPassword(password);
-        console.log(password, passwordencrypted);
         const query = `CALL CreateUser (${rol}, '${nombre}', ${numcc}, '${cargo}', '${correo}', '${passwordencrypted}')`;
         //Se realiza el llamado a la BD
         await db.query(query, (err, result) => {

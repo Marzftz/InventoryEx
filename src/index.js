@@ -47,6 +47,7 @@ app.use(require("./routes/controller_soldespachadas"));
 app.use(require("./routes/controller_recuperarcontrasena"));
 app.use(require("./routes/controller_informe"));
 app.use(require("./routes/controller_informepersonalizado"));
+app.use(require("./routes/controller_contrasena"));
 
 //**************ARCHIVOS PUBLICOS*****************//
 

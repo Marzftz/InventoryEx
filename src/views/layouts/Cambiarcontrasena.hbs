@@ -1,6 +1,6 @@
-  <script>
-      validate();
-  </script> 
+<script>
+  validate();
+</script>
 <div class="d-flex" id="wrapper">
   <!-- Sidebar -->
   <div class="bg-light border-right" id="sidebar-wrapper">
@@ -58,7 +58,7 @@
     </div>
     <!--FIN Titulo y descripción de la pantalla -->
 
-    <form id="formcambiarcontra">
+    <form id="formcambiarcontra" action="/validatecontra" method="POST">
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-6 col-form-label">Email</label>
         <div class="col-sm-6">
@@ -75,13 +75,18 @@
         <label style="position:relative
         " for="inputPassword" class="col-sm-6 col-form-label">Nueva Contraseña</label>
         <div class="col-sm-6">
-          <input name= "newPassword" type="password" class="form-control" id="newPassword">
+          <input name="newPassword" type="password" class="form-control" id="newPassword">
         </div>
       </div>
+      <div id="alerta" class="form-group contenedor alerta_novisble {{alerta}}" style= "text-align:center">
+        <div id="textalerta" class="alert alert-warning" role="alert">
+          {{textalerta}}
+        </div>
+      </div>
+
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-secondary">Cancelar</button>
-        <button type="button" class="btn btn-secondary botondescarga">Guardar</button>
+        <button type="submit" class="btn btn-secondary botondescarga">Guardar</button>
       </div>
     </form>
 

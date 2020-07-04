@@ -1,7 +1,7 @@
 module.exports = {
   database: {
     host: "localhost",
-    user: "user",
+    user: "root",
     password: "Qwerty16.",
     database: "inventoryex",
   },
